@@ -1,171 +1,177 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Портфолио Ростислава, Python-разработчика: ИИ-агенты, Telegram-боты, автоматизация">
-    <meta name="keywords" content="Python, ИИ, Telegram-боты, портфолио, фриланс">
-    <meta name="author" content="Ростислав">
-    <title>Ростислав | Python Developer</title>
+    <meta name="description" content="Portfolio of Rostislav, a Python developer specializing in AI agents, Telegram bots, and automation">
+    <meta name="keywords" content="Python, AI, Telegram bots, portfolio, freelance">
+    <meta name="author" content="Rostislav">
+    <title>SkillFlux | Python Developer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
-    <!-- Шапка -->
-    <header class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+<body class="theme-light">
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Ростислав | Python Developer</a>
+            <a class="navbar-brand" href="#">SkillFlux | Python Developer</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#hero">Главная</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Портфолио</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">О себе</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacts">Contact</a></li>
+                    <li class="nav-item">
+                        <button id="theme-toggle" class="btn btn-outline-secondary" title="Toggle theme">
+                            <span class="theme-icon">☀️</span>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
     </header>
 
-    <!-- Главная секция (Hero) -->
-    <section id="hero" class="py-5 text-center bg-light">
+    <!-- Hero Section -->
+    <section id="hero" class="py-5 text-center">
         <div class="container">
-            <h1 class="display-4">Привет, я Ростислав!</h1>
-            <p class="lead">Python-разработчик, специализирующийся на ИИ-агентах, Telegram-ботах и автоматизации. Мои проекты экономят клиентам до 10 часов в неделю.</p>
-            <a href="#portfolio" class="btn btn-primary btn-lg">Посмотреть проекты</a>
+            <h1 class="display-4">Hi, I'm Rostislav!</h1>
+            <p class="lead">Python developer specializing in AI agents, Telegram bots, and automation. My projects save clients up to 10 hours a week.</p>
+            <p class="lead">Code that drives efficiency.</p>
+            <a href="#portfolio" class="btn btn-primary btn-lg">View Projects</a>
         </div>
     </section>
 
-    <!-- Портфолио -->
+    <!-- Portfolio -->
     <section id="portfolio" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Мои проекты</h2>
+            <h2 class="text-center mb-4">My Projects</h2>
             <div class="row">
-                <!-- Проект 1 -->
+                <!-- Project 1 -->
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Grok Insights Bot</h5>
-                            <p class="card-text"><strong>Проблема:</strong> Маркетологи тратят часы на анализ постов в X.</p>
-                            <p class="card-text"><strong>Решение:</strong> Telegram-бот с 7 AI API для анализа трендов и настроений.</p>
-                            <p class="card-text"><strong>Технологии:</strong> Python, aiogram, xAI Grok API, SQLite.</p>
-                            <p class="card-text"><strong>Результат:</strong> Экономия 10 часов в неделю.</p>
+                            <p class="card-text"><strong>Problem:</strong> Marketers spend hours analyzing posts on X.</p>
+                            <p class="card-text"><strong>Solution:</strong> Telegram bot with 7 AI APIs for trend and sentiment analysis.</p>
+                            <p class="card-text"><strong>Technologies:</strong> Python, aiogram, xAI Grok API, SQLite.</p>
+                            <p class="card-text"><strong>Result:</strong> Saves 10 hours a week.</p>
                             <a href="#" class="btn btn-outline-primary">GitHub</a>
-                            <a href="#" class="btn btn-outline-primary">Демо</a>
+                            <a href="#" class="btn btn-outline-primary">Demo</a>
                         </div>
                     </div>
                 </div>
-                <!-- Проект 2 -->
+                <!-- Project 2 -->
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">SmartBusinessBot</h5>
-                            <p class="card-text"><strong>Проблема:</strong> Малый бизнес нуждается в автоматизации поддержки клиентов.</p>
-                            <p class="card-text"><strong>Решение:</strong> Telegram-бот с NLP для FAQ и записи заказов в Google Sheets.</p>
-                            <p class="card-text"><strong>Технологии:</strong> Python, aiogram, Hugging Face, Google Sheets API.</p>
-                            <p class="card-text"><strong>Результат:</strong> Увеличение скорости ответа на 80%.</p>
+                            <p class="card-text"><strong>Problem:</strong> Small businesses need automated customer support.</p>
+                            <p class="card-text"><strong>Solution:</strong> Telegram bot with NLP for FAQs and order logging in Google Sheets.</p>
+                            <p class="card-text"><strong>Technologies:</strong> Python, aiogram, Hugging Face, Google Sheets API.</p>
+                            <p class="card-text"><strong>Result:</strong> 80% faster response times.</p>
                             <a href="#" class="btn btn-outline-primary">GitHub</a>
-                            <a href="#" class="btn btn-outline-primary">Демо</a>
+                            <a href="#" class="btn btn-outline-primary">Demo</a>
                         </div>
                     </div>
                 </div>
-                <!-- Проект 3 -->
+                <!-- Project 3 -->
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">PriceParser</h5>
-                            <p class="card-text"><strong>Проблема:</strong> Ручной сбор цен конкурентов занимает часы.</p>
-                            <p class="card-text"><strong>Решение:</strong> Скрипт парсит цены с сайтов и отправляет уведомления в Telegram.</p>
-                            <p class="card-text"><strong>Технологии:</strong> Python, BeautifulSoup, aiogram, SQLite.</p>
-                            <p class="card-text"><strong>Результат:</strong> Экономия 3 часов в день.</p>
+                            <p class="card-text"><strong>Problem:</strong> Manual competitor price collection takes hours.</p>
+                            <p class="card-text"><strong>Solution:</strong> Script parses prices from websites and sends Telegram notifications.</p>
+                            <p class="card-text"><strong>Technologies:</strong> Python, BeautifulSoup, aiogram, SQLite.</p>
+                            <p class="card-text"><strong>Result:</strong> Saves 3 hours a day.</p>
                             <a href="#" class="btn btn-outline-primary">GitHub</a>
-                            <a href="#" class="btn btn-outline-primary">Демо</a>
+                            <a href="#" class="btn btn-outline-primary">Demo</a>
                         </div>
                     </div>
                 </div>
-                <!-- Проект 4 -->
+                <!-- Project 4 -->
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Автоматизация отчетов</h5>
-                            <p class="card-text"><strong>Проблема:</strong> Ручное создание отчетов отнимает время.</p>
-                            <p class="card-text"><strong>Решение:</strong> Скрипт собирает данные из API и формирует отчеты в Excel.</p>
-                            <p class="card-text"><strong>Технологии:</strong> Python, pandas, openpyxl, OpenWeatherMap API.</p>
-                            <p class="card-text"><strong>Результат:</strong> Экономия 5 часов в неделю.</p>
+                            <h5 class="card-title">Report Automation</h5>
+                            <p class="card-text"><strong>Problem:</strong> Manual report creation is time-consuming.</p>
+                            <p class="card-text"><strong>Solution:</strong> Script collects data from APIs and generates Excel reports.</p>
+                            <p class="card-text"><strong>Technologies:</strong> Python, pandas, openpyxl, OpenWeatherMap API.</p>
+                            <p class="card-text"><strong>Result:</strong> Saves 5 hours a week.</p>
                             <a href="#" class="btn btn-outline-primary">GitHub</a>
-                            <a href="#" class="btn btn-outline-primary">Демо</a>
+                            <a href="#" class="btn btn-outline-primary">Demo</a>
                         </div>
                     </div>
                 </div>
-                <!-- Проект 5 -->
+                <!-- Project 5 -->
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">TSQ (Two-Step Quiz Bot)</h5>
-                            <p class="card-text"><strong>Проблема:</strong> Нужен интерактивный способ вовлечения аудитории.</p>
-                            <p class="card-text"><strong>Решение:</strong> Telegram-бот для викторин, создан для Московского зоопарка.</p>
-                            <p class="card-text"><strong>Технологии:</strong> Python, aiogram, SQLite.</p>
-                            <p class="card-text"><strong>Результат:</strong> Увеличение вовлеченности на 60%.</p>
+                            <p class="card-text"><strong>Problem:</strong> Need an interactive way to engage audiences.</p>
+                            <p class="card-text"><strong>Solution:</strong> Telegram quiz bot created for Moscow Zoo.</p>
+                            <p class="card-text"><strong>Technologies:</strong> Python, aiogram, SQLite.</p>
+                            <p class="card-text"><strong>Result:</strong> 60% increase in engagement.</p>
                             <a href="#" class="btn btn-outline-primary">GitHub</a>
-                            <a href="#" class="btn btn-outline-primary">Демо</a>
+                            <a href="#" class="btn btn-outline-primary">Demo</a>
                         </div>
                     </div>
                 </div>
-                <!-- Проект 6 -->
+                <!-- Project 6 -->
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Mountain Pass Application</h5>
-                            <p class="card-text"><strong>Проблема:</strong> Сложность управления данными о горных перевалах.</p>
-                            <p class="card-text"><strong>Решение:</strong> REST API на Django с JWT-аутентификацией.</p>
-                            <p class="card-text"><strong>Технологии:</strong> Python, Django, JWT, SQLite.</p>
-                            <p class="card-text"><strong>Результат:</strong> Упрощение управления данными.</p>
+                            <p class="card-text"><strong>Problem:</strong> Managing mountain pass data is complex.</p>
+                            <p class="card-text"><strong>Solution:</strong> REST API with JWT authentication on Django.</p>
+                            <p class="card-text"><strong>Technologies:</strong> Python, Django, JWT, SQLite.</p>
+                            <p class="card-text"><strong>Result:</strong> Simplified data management.</p>
                             <a href="#" class="btn btn-outline-primary">GitHub</a>
-                            <a href="#" class="btn btn-outline-primary">Демо</a>
+                            <a href="#" class="btn btn-outline-primary">Demo</a>
                         </div>
                     </div>
                 </div>
-                <!-- Проект 7 -->
+                <!-- Project 7 -->
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">GuildPost-MMORPG-Bulletin-Board</h5>
-                            <p class="card-text"><strong>Проблема:</strong> Игрокам нужна платформа для объявлений.</p>
-                            <p class="card-text"><strong>Решение:</strong> Django-приложение с доской объявлений.</p>
-                            <p class="card-text"><strong>Технологии:</strong> Python, Django, SQLite.</p>
-                            <p class="card-text"><strong>Результат:</strong> Удобная платформа для сообщества.</p>
+                            <p class="card-text"><strong>Problem:</strong> Gamers need a platform for announcements.</p>
+                            <p class="card-text"><strong>Solution:</strong> Django app with a bulletin board.</p>
+                            <p class="card-text"><strong>Technologies:</strong> Python, Django, SQLite.</p>
+                            <p class="card-text"><strong>Result:</strong> Convenient platform for the community.</p>
                             <a href="#" class="btn btn-outline-primary">GitHub</a>
-                            <a href="#" class="btn btn-outline-primary">Демо</a>
+                            <a href="#" class="btn btn-outline-primary">Demo</a>
                         </div>
                     </div>
                 </div>
-                <!-- Проект 8 -->
+                <!-- Project 8 -->
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">NewsPortal</h5>
-                            <p class="card-text"><strong>Проблема:</strong> Нужна платформа для новостей с подписками.</p>
-                            <p class="card-text"><strong>Решение:</strong> Django-платформа с Celery и Redis.</p>
-                            <p class="card-text"><strong>Технологии:</strong> Python, Django, Celery, Redis.</p>
-                            <p class="card-text"><strong>Результат:</strong> Автоматизация рассылок новостей.</p>
+                            <p class="card-text"><strong>Problem:</strong> Need a news platform with subscriptions.</p>
+                            <p class="card-text"><strong>Solution:</strong> Django platform with Celery and Redis.</p>
+                            <p class="card-text"><strong>Technologies:</strong> Python, Django, Celery, Redis.</p>
+                            <p class="card-text"><strong>Result:</strong> Automated news distribution.</p>
                             <a href="#" class="btn btn-outline-primary">GitHub</a>
-                            <a href="#" class="btn btn-outline-primary">Демо</a>
+                            <a href="#" class="btn btn-outline-primary">Demo</a>
                         </div>
                     </div>
                 </div>
-                <!-- Проект 9 -->
+                <!-- Project 9 -->
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">AlpPass</h5>
-                            <p class="card-text"><strong>Проблема:</strong> Нужен интерфейс для работы с Mountain Pass API.</p>
-                            <p class="card-text"><strong>Решение:</strong> React-приложение с CRUD-функциями.</p>
-                            <p class="card-text"><strong>Технологии:</strong> React, JavaScript, REST API.</p>
-                            <p class="card-text"><strong>Результат:</strong> Удобный интерфейс для пользователей.</p>
+                            <p class="card-text"><strong>Problem:</strong> Need an interface for Mountain Pass API.</p>
+                            <p class="card-text"><strong>Solution:</strong> React app with CRUD functionality.</p>
+                            <p class="card-text"><strong>Technologies:</strong> React, JavaScript, REST API.</p>
+                            <p class="card-text"><strong>Result:</strong> User-friendly interface.</p>
                             <a href="#" class="btn btn-outline-primary">GitHub</a>
-                            <a href="#" class="btn btn-outline-primary">Демо</a>
+                            <a href="#" class="btn btn-outline-primary">Demo</a>
                         </div>
                     </div>
                 </div>
@@ -173,12 +179,12 @@
         </div>
     </section>
 
-    <!-- О себе -->
-    <section id="about" class="py-5 bg-light">
+    <!-- About -->
+    <section id="about" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-4">О себе</h2>
-            <p class="text-center">Я Python-разработчик с 2 годами опыта, специализируюсь на ИИ-агентах, Telegram-ботах и автоматизации. Создаю решения, которые экономят время и решают реальные проблемы бизнеса.</p>
-            <h4 class="mt-4">Навыки:</h4>
+            <h2 class="text-center mb-4">About Me</h2>
+            <p class="text-center">I'm a Python developer with 2 years of experience, specializing in AI agents, Telegram bots, and automation. I create solutions that save time and solve real business problems.</p>
+            <h4 class="mt-4">Skills:</h4>
             <ul class="list-group list-group-horizontal flex-wrap justify-content-center">
                 <li class="list-group-item border-0">Python</li>
                 <li class="list-group-item border-0">Django</li>
@@ -196,34 +202,57 @@
                 <li class="list-group-item border-0">Redis</li>
                 <li class="list-group-item border-0">JWT</li>
                 <li class="list-group-item border-0">Swagger</li>
-                <li class="list-group-item border-0">UX-дизайн</li>
+                <li class="list-group-item border-0">UX Design</li>
             </ul>
         </div>
     </section>
 
-    <!-- Контакты -->
+    <!-- Contact -->
     <section id="contacts" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Связаться со мной</h2>
+            <h2 class="text-center mb-4">Contact Me</h2>
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-                        <li class="list-group-item"><strong>Telegram:</strong> <a href="https://t.me/yourtelegram">@yourtelegram</a></li>
-                        <li class="list-group-item"><strong>Upwork:</strong> <a href="#">Профиль Upwork</a></li>
+                        <li class="list-group-item"><strong>Email:</strong> <a href="mailto:contact@skillflux.eu">contact@skillflux.eu</a></li>
+                        <li class="list-group-item"><strong>Telegram:</strong> <a href="https://t.me/SkillFlux">@SkillFlux</a></li>
+                        <li class="list-group-item"><strong>Upwork:</strong> <a href="#">Upwork Profile</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Подвал -->
-    <footer class="py-3 bg-dark text-white text-center">
+    <!-- Footer -->
+    <footer class="py-3 text-white text-center">
         <div class="container">
-            <p>&copy; 2025 Ростислав. Все права защищены.</p>
+            <p>© 2025 Rostislav. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+        const themeIcon = toggleButton.querySelector('.theme-icon');
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'theme-light';
+        body.classList.add(savedTheme);
+        themeIcon.textContent = savedTheme === 'theme-light' ? '☀️' : '🌙';
+
+        // Toggle theme
+        toggleButton.addEventListener('click', () => {
+            if (body.classList.contains('theme-light')) {
+                body.classList.replace('theme-light', 'theme-dark');
+                themeIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'theme-dark');
+            } else {
+                body.classList.replace('theme-dark', 'theme-light');
+                themeIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'theme-light');
+            }
+        });
+    </script>
 </body>
 </html>

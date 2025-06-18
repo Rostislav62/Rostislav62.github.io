@@ -1,0 +1,69 @@
+:root {
+    --background: #F8F9FA;
+    --text: #212529;
+    --card-bg: #FFFFFF;
+    --card-border: #DEE2E6;
+    --header-bg: #F8F9FA;
+    --header-text: #212529;
+    --footer-bg: #212529;
+    --footer-text: #FFFFFF;
+    --primary-btn-bg: #007BFF;
+    --primary-btn-text: #FFFFFF;
+}
+
+.theme-dark {
+    --background: #212529;
+    --text: #F8F9FA;
+    --card-bg: #343A40;
+    --card-border: #495057;
+    --header-bg: #343A40;
+    --header-text: #F8F9FA;
+    --footer-bg: #1A1F24;
+    --footer-text: #F8F9FA;
+    --primary-btn-bg: #0056b3;
+    --primary-btn-text: #F8F9FA;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    background-color: var(--header-bg);
+}
+
+.navbar-brand, .nav-link {
+    color: var(--header-text) !important;
+}
+
+section#hero, section#about {
+    background-color: var(--background);
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border);
+}
+
+.btn-primary {
+    background-color: var(--primary-btn-bg);
+    color: var(--primary-btn-text);
+    border: none;
+}
+
+.btn-outline-primary {
+    color: var(--primary-btn-bg);
+    border-color: var(--primary-btn-bg);
+}
+
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+}
+
+.list-group-item {
+    background-color: var(--card-bg);
+    color: var(--text);
+}
