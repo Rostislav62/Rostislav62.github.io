@@ -9,6 +9,10 @@
     --footer-text: #FFFFFF;
     --primary-btn-bg: #007BFF;
     --primary-btn-text: #FFFFFF;
+    --slogan-bg: #E6F0FA;
+    --slogan-text: #212529;
+    --slogan-border: #E6F0FA;
+    --shadow-color: #003087;
 }
 
 .theme-dark {
@@ -22,6 +26,10 @@
     --footer-text: #F8F9FA;
     --primary-btn-bg: #0056b3;
     --primary-btn-text: #F8F9FA;
+    --slogan-bg: #1A3152;
+    --slogan-text: #F8F9FA;
+    --slogan-border: #4A90E2;
+    --shadow-color: #66B0FF;
 }
 
 body {
@@ -66,4 +74,27 @@ footer {
 .list-group-item {
     background-color: var(--card-bg);
     color: var(--text);
+}
+
+/* Hero Section Styles */
+#hero .slogan-card {
+    background-color: var(--slogan-bg);
+    color: var(--slogan-text);
+    border: none;
+    box-shadow: 0 0.25rem 0.5rem var(--shadow-color);
+    border-radius: 0.5rem;
+}
+
+#hero .image-card {
+    background-color: transparent;
+    border: 1px solid var(--slogan-border);
+    box-shadow: 0 0.25rem 0.5rem var(--shadow-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+#hero .card-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
