@@ -11,7 +11,7 @@
     --primary-btn-text: #FFFFFF;
     --slogan-bg: #E6F0FA;
     --slogan-text: #212529;
-    --slogan-border: #E6F0FA;
+    --slogan-border: #B0C4DE;
     --shadow-color: #003087;
 }
 
@@ -50,12 +50,17 @@ body {
     box-shadow: 0 0.25rem 0.5rem var(--shadow-color);
 }
 
+.theme-dark .navbar {
+    border-bottom: 1px solid var(--slogan-border);
+    box-shadow: 0 0.25rem 0.5rem var(--shadow-color);
+}
+
 section#hero, section#about {
     background-color: var(--background);
 }
 
 #hero {
-    padding-top: 2rem; /* Increased spacing below navbar */
+    padding-top: 4rem; /* Doubled spacing below navbar */
 }
 
 .card {
@@ -89,14 +94,15 @@ footer {
     background-color: var(--slogan-bg);
     color: var(--slogan-text);
     border: none;
-    border-top: 1px solid var(--slogan-border);
+    border-top: 2px solid var(--slogan-border);
     box-shadow: 0 0.25rem 0.5rem var(--shadow-color);
     border-radius: 0.5rem;
 }
 
 #hero .image-card {
     background-color: transparent;
-    border: 1px solid var(--slogan-border);
+    border: none;
+    border-top: 2px solid var(--slogan-border);
     box-shadow: 0 0.25rem 0.5rem var(--shadow-color);
     border-radius: 0.5rem;
     overflow: hidden;
@@ -111,6 +117,8 @@ footer {
 /* Scroll Down Button Styles */
 .scroll-down {
     margin-bottom: 4rem; /* Ensure space to hide portfolio cards */
+    margin-left: 1rem; /* 1cm from left edge */
+    text-align: left;
 }
 
 .scroll-down .btn {
