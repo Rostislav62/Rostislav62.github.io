@@ -13,6 +13,7 @@
     --slogan-text: #212529;
     --slogan-border: #B0C4DE;
     --shadow-color: #003087;
+    --portfolio-bg: #9ba3ad; * Darker blue for light theme */
 }
 
 .theme-dark {
@@ -30,6 +31,7 @@
     --slogan-text: #F8F9FA;
     --slogan-border: #4A90E2;
     --shadow-color: #66B0FF;
+    --portfolio-bg: #2A3A4A; /* Placeholder for dark theme, to be adjusted later */
 }
 
 body {
@@ -59,9 +61,17 @@ section#hero, section#about {
     background-color: var(--background);
 }
 
+section#portfolio {
+    background-color: var(--portfolio-bg); /* Full-width background */
+}
+
+.portfolio-bg {
+    padding: 2rem; /* Inner padding for content */
+}
+
 .cards-container {
     min-height: 8rem; /* Sets minimum height of container */
-    padding-top: 8rem; /* Adjust this value to change distance from navbar to cards (e.g., 2rem, 6rem, 80px) */
+    padding-top: 10rem; /* Adjust this value to change distance from navbar to cards (e.g., 2rem, 6rem, 80px) */
 }
 
 .card {
@@ -114,6 +124,18 @@ footer {
     height: auto;
     object-fit: cover;
 }
+
+/* Portfolio Section Styles */
+#portfolio .portfolio-card {
+    background-color: var(--slogan-bg);
+    color: var(--slogan-text);
+    border: none;
+    border-top: 2px solid var(--slogan-border);
+    box-shadow: 0 0.25rem 0.5rem var(--shadow-color);
+    border-radius: 0.5rem;
+    min-height: 22rem; /* Sets uniform height for all portfolio cards (adjust: 18rem, 22rem, 320px) */
+}
+
 
 /* Scroll Down Button Styles */
 .scroll-down {
