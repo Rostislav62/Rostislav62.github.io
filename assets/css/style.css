@@ -59,8 +59,9 @@ section#hero, section#about {
     background-color: var(--background);
 }
 
-#hero {
-    padding-top: 4rem; /* Doubled spacing below navbar */
+.cards-container {
+    min-height: 8rem; /* Sets minimum height of container */
+    padding-top: 8rem; /* Adjust this value to change distance from navbar to cards (e.g., 2rem, 6rem, 80px) */
 }
 
 .card {
@@ -118,6 +119,7 @@ footer {
 .scroll-down {
     margin-bottom: 4rem; /* Ensure space to hide portfolio cards */
     margin-left: 1rem; /* 1cm from left edge */
+    padding-top: 6rem; /* Adjust this value to change distance from cards to scroll button (e.g., 4rem, 8rem, 80px) */
     text-align: left;
 }
 
