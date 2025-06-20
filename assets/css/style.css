@@ -190,4 +190,12 @@ footer {
     font-size: 0.75rem;
     color: var(--slogan-text);
 }
+.skills-icons .skill-icon img {
+    background: transparent;
+}
+
+.skills-icons .list-group-item {
+    border: none;
+    background: transparent;
+}
 
