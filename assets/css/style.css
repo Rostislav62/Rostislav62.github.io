@@ -13,7 +13,7 @@
     --slogan-text: #212529;
     --slogan-border: #B0C4DE;
     --shadow-color: #003087;
-    --portfolio-bg: #9ba3ad; * Darker blue for light theme */
+    --portfolio-bg: #9ba3ad; /* Darker blue for light theme */
 }
 
 .theme-dark {
@@ -110,14 +110,16 @@ footer {
     border-radius: 0.5rem;
 }
 
-#hero .image-card {
-    background-color: transparent;
+/* Hero and About Section Styles */
+#hero .image-card, #about .image-card {
+    background-color: var(--slogan-bg); /* Match slogan-card background */
     border: none;
     border-top: 2px solid var(--slogan-border);
     box-shadow: 0 0.25rem 0.5rem var(--shadow-color);
     border-radius: 0.5rem;
     overflow: hidden;
 }
+
 
 #hero .card-img {
     width: 100%;
@@ -164,4 +166,27 @@ footer {
 .scroll-down span {
     color: var(--text);
     font-weight: 500;
+}
+
+/* About Section Styles */
+#about {
+    background-color: var(--background);
+}
+
+.skills-icons .skill-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5rem;
+    text-align: center;
+    width: 80px; /* Adjust for icon size and text */
+}
+
+.skills-icons .skill-icon svg {
+    margin-bottom: 0.25rem;
+}
+
+.skills-icons .skill-icon span {
+    font-size: 0.75rem;
+    color: var(--slogan-text);
 }
