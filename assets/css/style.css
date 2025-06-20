@@ -101,7 +101,7 @@ footer {
 }
 
 /* Hero Section Styles */
-#hero .slogan-card {
+#hero .slogan-card, #about .slogan-card {
     background-color: var(--slogan-bg);
     color: var(--slogan-text);
     border: none;
