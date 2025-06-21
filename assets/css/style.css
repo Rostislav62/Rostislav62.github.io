@@ -34,6 +34,10 @@
     --portfolio-bg: #2A3A4A; /* Placeholder for dark theme, to be adjusted later */
 }
 
+.theme-dark #about h4 {
+    color: white;
+}
+
 body {
     background-color: var(--background);
     color: var(--text);
