@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Grok Insights Bot - Telegram bot for analyzing X posts with AI APIs">
+    <meta name="keywords" content="Python, AI, Telegram bot, Grok Insights, sentiment analysis">
+    <meta name="author" content="Rostislav">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Grok Insights Bot | SkillFlux</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css?v=795583a">
+</head>
+<body class="theme-light">
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">SkillFlux | Python Developer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contacts">Contact</a></li>
+                    <li class="nav-item">
+                        <button id="theme-toggle" class="btn btn-outline-secondary" title="Toggle theme">
+                            <span class="theme-icon">☀️</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section id="grok-insights-bot" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Grok Insights Bot</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card grok-card">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">How to Work with the Bot</h3>
+
+                            <h5>Start the Bot in Telegram</h5>
+                            <p>Find the bot by its name (e.g., <a href="https://t.me/grok_insights_bot">@grok_insights_bot</a>) or start a chat with it.</p>
+
+                            <h5>Main Commands</h5>
+                            <ul>
+                                <li><code>/start</code> — Launch the bot and receive a welcome message.</li>
+                                <li><code>/select_service</code> — Choose an analysis service (xAI, OpenAI, Hugging Face, uClassify, TextRazor, MonkeyLearn, Watson).</li>
+                                <li><code>/analyze <topic></code> — Analyze posts by topic (e.g., <code>/analyze AI</code>).</li>
+                                <li><code>/history</code> — View analysis history.</li>
+                                <li><code>/help</code> — Display the list of commands.</li>
+                            </ul>
+
+                            <h5>Example Usage</h5>
+                            <ol>
+                                <li>Send <code>/start</code>.</li>
+                                <img id="start-img" src="../assets/img/grok-insights-bot/start.png" alt="Start command screenshot" class="img-fluid mb-3" style="max-height: 300px;">
+                                <li>Send <code>/select_service</code> and choose uClassify.</li>
+                                <img id="select-service-img" src="../assets/img/grok-insights-bot/select_service.png" alt="Select service screenshot" class="img-fluid mb-3" style="max-height: 300px;">
+                                <li>Send <code>/analyze AI</code> to receive a report:</li>
+                                <img id="analyze-ai-img" src="../assets/img/grok-insights-bot/analyze_ai.png" alt="Analyze AI screenshot" class="img-fluid mb-3" style="max-height: 300px;">
+                            </ol>
+
+                            <blockquote class="blockquote">
+                                <p>Report for topic 'AI' (uClassify):<br>
+                                Sentiment: Positive<br>
+                                Entities: Artificial intelligence, Machine learning</p>
+                            </blockquote>
+                            <img id="report-example-img" src="../assets/img/grok-insights-bot/report_example.png" alt="Report example screenshot" class="img-fluid mb-3" style="max-height: 300px;">
+                            <p>Use inline buttons ("Repeat", "Share", "History") for further actions.</p>
+
+                            <h5>Demo Video</h5>
+                            <div class="ratio ratio-16x9">
+                                <video id="demo-video" controls class="w-100">
+                                    <source src="../assets/videos/grok-insights-bot.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-3 text-white text-center">
+        <div class="container">
+            <p>© 2025 Rostislav. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+        const themeIcon = toggleButton.querySelector('.theme-icon');
+        const media = {
+            'start-img': ['../assets/img/grok-insights-bot/start.png', '../assets/img/grok-insights-bot/start.png_w'],
+            'select-service-img': ['../assets/img/grok-insights-bot/select_service.png', '../assets/img/grok-insights-bot/select_service_w.png'],
+            'analyze-ai-img': ['../assets/img/grok-insights-bot/analyze_ai.png', '../assets/img/grok-insights-bot/analyze_ai_w.png'],
+            'report-example-img': ['../assets/img/grok-insights-bot/report_example.png', '../assets/img/grok-insights-bot/report_example_w.png'],
+            'demo-video': ['../assets/videos/grok-insights-bot.mp4', '../assets/videos/grok-insights-bot_w.mp4']
+        };
+
+        function updateMedia(theme) {
+            for (const [elementId, [darkSrc, lightSrc]] of Object.entries(media)) {
+                const element = document.getElementById(elementId);
+                if (element) {
+                    if (element.tagName === 'VIDEO') {
+                        const source = element.querySelector('source');
+                        source.src = theme === 'theme-light' ? lightSrc : darkSrc;
+                        element.load(); // Reload video to apply new source
+                    } else {
+                        element.src = theme === 'theme-light' ? lightSrc : darkSrc;
+                    }
+                }
+            }
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'theme-light';
+        body.classList.add(savedTheme);
+        themeIcon.textContent = savedTheme === 'theme-light' ? '☀️' : '🌙';
+        updateMedia(savedTheme);
+
+        toggleButton.addEventListener('click', () => {
+            if (body.classList.contains('theme-light')) {
+                body.classList.replace('theme-light', 'theme-dark');
+                themeIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'theme-dark');
+                updateMedia('theme-dark');
+            } else {
+                body.classList.replace('theme-dark', 'theme-light');
+                themeIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'theme-light');
+                updateMedia('theme-light');
+            }
+        });
+    </script>
+</body>
+</html>
