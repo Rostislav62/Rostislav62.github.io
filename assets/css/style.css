@@ -83,6 +83,15 @@ section#portfolio {
     border-color: var(--card-border);
 }
 
+.grok-card {
+    background-color: var(--slogan-bg);
+    color: var(--slogan-text);
+    border: none;
+    border-top: 2px solid var(--slogan-border);
+    box-shadow: 0 0.25rem 0.5rem var(--shadow-color);
+    border-radius: 0.5rem;
+}
+
 .btn-primary {
     background-color: var(--primary-btn-bg);
     color: var(--primary-btn-text);
@@ -124,7 +133,6 @@ footer {
     overflow: hidden;
 }
 
-
 #hero .card-img {
     width: 100%;
     height: auto;
@@ -141,7 +149,6 @@ footer {
     border-radius: 0.5rem;
     min-height: 22rem; /* Sets uniform height for all portfolio cards (adjust: 18rem, 22rem, 320px) */
 }
-
 
 /* Scroll Down Button Styles */
 .scroll-down {
@@ -203,3 +210,12 @@ footer {
     background: transparent;
 }
 
+.avatar-img {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
