@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="News Portal — Django-based news platform with subscriptions, Celery tasks, and Redis" />
+  <meta name="keywords" content="Python, Django, Celery, Redis, portfolio" />
+  <meta name="author" content="Rostislav" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>News Portal | SkillFlux</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css?v=795583a">
+</head>
+<body class="theme-light">
+
+  <!-- Header -->
+  <header class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">SkillFlux | Python Developer</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#contacts">Contact</a></li>
+          <li class="nav-item">
+            <button id="theme-toggle" class="btn btn-outline-secondary" title="Toggle theme">
+              <span class="theme-icon">☀️</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">News Portal — Dynamic News Platform</h2>
+
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="card grok-card">
+            <div class="card-body">
+              <h3 class="card-title mb-4">Overview</h3>
+              <p><strong>Problem:</strong> Many news platforms lack real-time notifications, subscription-based updates, and efficient content management, resulting in disconnected user experiences.</p>
+              <p><strong>Solution:</strong> <em>News Portal</em> — a Django-based news platform with category subscriptions, instant email notifications, and weekly digests powered by Celery and Redis.</p>
+              <p><strong>Technologies:</strong> Python, Django 4.2, Celery, Redis, django-allauth, Bootstrap.</p>
+              <p><strong>Result:</strong> Increased user engagement, timely delivery of news, and simplified content management.</p>
+
+              <h5 class="mt-3">Key Features</h5>
+              <ul>
+                <li>User registration (email) and optional Yandex OAuth.</li>
+                <li>Authors can create/edit/delete articles (news/posts) with rich text.</li>
+                <li>Category subscriptions with instant email notifications.</li>
+                <li>Weekly digests (Monday 08:00) via Celery Beat.</li>
+                <li>User groups: Basic (read), Premium (up to 5 posts/day), Authors (full CRUD).</li>
+                <li>Caching (low-level, per-page, template fragments) and structured logging.</li>
+                <li>Security: CSRF/XSS mitigation, safe ORM queries.</li>
+              </ul>
+
+              <div class="row g-4 my-2">
+                <div class="col-md-6">
+                  <figure class="text-center">
+                    <img id="home-img" class="img-fluid rounded mb-2" src="../assets/img/newsportal/home.png" alt="News Portal home">
+                    <figcaption class="small">Home page</figcaption>
+                  </figure>
+                </div>
+                <div class="col-md-6">
+                  <figure class="text-center">
+                    <img id="list-img" class="img-fluid rounded mb-2" src="../assets/img/newsportal/list.png" alt="Articles list">
+                    <figcaption class="small">Articles list & filters</figcaption>
+                  </figure>
+                </div>
+                <div class="col-md-6">
+                  <figure class="text-center">
+                    <img id="detail-img" class="img-fluid rounded mb-2" src="../assets/img/newsportal/detail.png" alt="Article details">
+                    <figcaption class="small">Article details & subscribe</figcaption>
+                  </figure>
+                </div>
+                <div class="col-md-6">
+                  <figure class="text-center">
+                    <img id="profile-img" class="img-fluid rounded mb-2" src="../assets/img/newsportal/profile.png" alt="User profile">
+                    <figcaption class="small">User profile & groups</figcaption>
+                  </figure>
+                </div>
+              </div>
+
+              <div class="d-flex gap-2 my-3">
+                <a href="https://github.com/Rostislav62/NewsPortal-Var1" class="btn btn-outline-primary" target="_blank" rel="noopener">GitHub</a>
+              </div>
+
+              <h5 class="mt-4">Run Locally</h5>
+              <ol>
+                <li>Clone the repository:
+                  <pre><code>git clone https://github.com/Rostislav62/NewsPortal-Var1.git NewsPortal
+cd NewsPortal</code></pre>
+                </li>
+                <li>Create virtual environment & install dependencies:
+                  <pre><code>python3.10 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt</code></pre>
+                </li>
+                <li>Create <code>.env</code>:
+                  <pre><code>SECRET_KEY=&lt;strong-secret&gt;
+DEBUG=True
+ALLOWED_HOSTS=127.0.0.1,localhost
+EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend
+CELERY_BROKER_URL=redis://127.0.0.1:6379/0
+CELERY_RESULT_BACKEND=redis://127.0.0.1:6379/1</code></pre>
+                </li>
+                <li>Run migrations & create superuser:
+                  <pre><code>python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser</code></pre>
+                </li>
+                <li>(Optional) Start Redis & Celery:
+                  <pre><code>sudo apt install -y redis-server
+sudo systemctl enable --now redis-server
+celery -A NewsPortal worker -l info
+celery -A NewsPortal beat -l info</code></pre>
+                </li>
+                <li>Run server:
+                  <pre><code>python manage.py runserver</code></pre>
+                </li>
+              </ol>
+
+              <h5 class="mt-4">Demo Video</h5>
+              <div class="ratio ratio-16x9">
+                <video id="demo-video" controls class="w-100">
+                  <source src="../assets/videos/newsportal.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-3 text-white text-center">
+    <div class="container">
+      <p>© 2025 Rostislav. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+    const themeIcon = toggleButton.querySelector('.theme-icon');
+
+    const media = {
+      'home-img': ['../assets/img/newsportal/home.png', '../assets/img/newsportal/home.png'],
+      'list-img': ['../assets/img/newsportal/list.png', '../assets/img/newsportal/list.png'],
+      'detail-img': ['../assets/img/newsportal/detail.png', '../assets/img/newsportal/detail.png'],
+      'profile-img': ['../assets/img/newsportal/profile.png', '../assets/img/newsportal/profile.png'],
+      'demo-video': ['../assets/videos/newsportal.mp4', '../assets/videos/newsportal.mp4']
+    };
+
+    function updateMedia(theme) {
+      for (const [id, [darkSrc, lightSrc]] of Object.entries(media)) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        if (el.tagName === 'VIDEO') {
+          const src = el.querySelector('source');
+          src.src = theme === 'theme-light' ? lightSrc : darkSrc;
+          el.load();
+        } else {
+          el.src = theme === 'theme-light' ? lightSrc : darkSrc;
+        }
+      }
+    }
+
+    const savedTheme = localStorage.getItem('theme') || 'theme-light';
+    body.classList.add(savedTheme);
+    themeIcon.textContent = savedTheme === 'theme-light' ? '☀️' : '🌙';
+    updateMedia(savedTheme);
+
+    toggleButton.addEventListener('click', () => {
+      if (body.classList.contains('theme-light')) {
+        body.classList.replace('theme-light', 'theme-dark');
+        themeIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'theme-dark');
+        updateMedia('theme-dark');
+      } else {
+        body.classList.replace('theme-dark', 'theme-light');
+        themeIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'theme-light');
+        updateMedia('theme-light');
+      }
+    });
+  </script>
+</body>
+</html>

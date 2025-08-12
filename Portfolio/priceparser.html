@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PriceParser - Telegram & Web bot for real-time product price tracking">
+    <meta name="keywords" content="Python, Telegram bot, web interface, price tracking, parser">
+    <meta name="author" content="Rostislav">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>PriceParser | SkillFlux</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css?v=795583a">
+</head>
+<body class="theme-light">
+    <!-- Header -->
+    <header class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">SkillFlux | Python Developer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contacts">Contact</a></li>
+                    <li class="nav-item">
+                        <button id="theme-toggle" class="btn btn-outline-secondary" title="Toggle theme">
+                            <span class="theme-icon">☀️</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section id="priceparser" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">PriceParser</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card grok-card">
+                        <div class="card-body">
+                            <h3 class="card-title mb-4">How to Use the Bot</h3>
+
+                            <h5>Telegram Bot Commands</h5>
+                            <ul>
+                                <li><code>/start</code> — Greet the bot.</li>
+                                <li><code>/subscribe</code> — Receive hourly price reports.</li>
+                                <li><code>/unsubscribe</code> — Stop receiving updates.</li>
+                                <li><code>/report</code> — Get current prices for all tracked products.</li>
+                                <li><code>/reportdelta</code> — Show only price changes since last report.</li>
+                                <li><code>/notifychange</code> — Toggle notification mode: all updates or only changes.</li>
+                                <li><code>/sort</code> — Toggle sorting between name and price.</li>
+                                <li><code>/history</code> — View 7-day price chart for each product.</li>
+                                <li><code>/help</code> — Display help message with all commands.</li>
+                            </ul>
+                            <h5>Example Usage</h5>
+                            <ol>
+                                <li>Send <code>/start </code>to greet the bot.</li>
+                                <img id="start-img" src="../assets/img/priceparser/start.png" alt="Start screenshot" class="img-fluid mb-3" style="max-height: 300px;">
+                                <li>Send <code>/report </code>to get current prices for all tracked products.</li>
+                                <img id="report-img" src="../assets/img/priceparser/report.png" alt="Report screenshot" class="img-fluid mb-3" style="max-height: 300px;">
+                                <li>Send <code>/history </code> to view 7-day price chart for each product.</li>
+                                <img id="history-img" src="../assets/img/priceparser/history.png" alt="History screenshot" class="img-fluid mb-3" style="max-height: 300px;">
+                            </ol>
+
+                            <h5>Web Interface</h5>
+                            <ul>
+                                <li><strong>Homepage:</strong> <a href="http://127.0.0.1:8000" target="_blank">http://127.0.0.1:8000</a></li>
+                                <li><strong>Filter by category:</strong> <a href="http://127.0.0.1:8000?category=Pokemon" target="_blank">http://127.0.0.1:8000?category=Pokemon</a></li>
+                                <li><strong>Sort products:</strong> <a href="http://127.0.0.1:8000?sort=price" target="_blank">http://127.0.0.1:8000?sort=price</a></li>
+                                <li><strong>Sort + filter example:</strong> <a href="http://127.0.0.1:8000?category=Pokemon&amp;sort=price" target="_blank">http://127.0.0.1:8000?category=Pokemon&amp;sort=price</a></li>
+                                <li><strong>Product chart (e.g., Bulbasaur):</strong> <a href="http://127.0.0.1:8000/history/Bulbasaur" target="_blank">http://127.0.0.1:8000/history/Bulbasaur</a></li>
+                                <li><strong>JSON API:</strong>
+                                    <ul>
+                                        <li><a href="http://127.0.0.1:8000/api/products" target="_blank">http://127.0.0.1:8000/api/products</a> — All products</li>
+                                        <li><a href="http://127.0.0.1:8000/api/products?category=Pokemon" target="_blank">http://127.0.0.1:8000/api/products?category=Pokemon</a> — Filter by category</li>
+                                        <li><a href="http://127.0.0.1:8000/api/products/Bulbasaur" target="_blank">http://127.0.0.1:8000/api/products/Bulbasaur</a> — Product details</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+
+                            <h5>Demo Video</h5>
+                            <div class="ratio ratio-16x9">
+                                <video id="demo-video" controls class="w-100">
+                                    <source src="../assets/videos/priceparser.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-3 text-white text-center">
+        <div class="container">
+            <p>© 2025 Rostislav. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const toggleButton = document.getElementById('theme-toggle');
+        const body = document.body;
+        const themeIcon = toggleButton.querySelector('.theme-icon');
+        const media = {
+            'start-img': ['../assets/img/priceparser/start.png', '../assets/img/priceparser/start_w.png'],
+            'report-img': ['../assets/img/priceparser/report.png', '../assets/img/priceparser/report_w.png'],
+            'history-img': ['../assets/img/priceparser/history.png', '../assets/img/priceparser/history_w.png'],
+            'demo-video': ['../assets/videos/priceparser.mp4', '../assets/videos/priceparser_w.mp4']
+        };
+
+        function updateMedia(theme) {
+            for (const [elementId, [darkSrc, lightSrc]] of Object.entries(media)) {
+                const element = document.getElementById(elementId);
+                if (element) {
+                    if (element.tagName === 'VIDEO') {
+                        const source = element.querySelector('source');
+                        source.src = theme === 'theme-light' ? lightSrc : darkSrc;
+                        element.load();
+                    } else {
+                        element.src = theme === 'theme-light' ? lightSrc : darkSrc;
+                    }
+                }
+            }
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'theme-light';
+        body.classList.add(savedTheme);
+        themeIcon.textContent = savedTheme === 'theme-light' ? '☀️' : '🌙';
+        updateMedia(savedTheme);
+
+        toggleButton.addEventListener('click', () => {
+            if (body.classList.contains('theme-light')) {
+                body.classList.replace('theme-light', 'theme-dark');
+                themeIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'theme-dark');
+                updateMedia('theme-dark');
+            } else {
+                body.classList.replace('theme-dark', 'theme-light');
+                themeIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'theme-light');
+                updateMedia('theme-light');
+            }
+        });
+    </script>
+</body>
+</html>

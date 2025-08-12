@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GuildPost — MMORPG bulletin board built with Django: categories, replies, email notifications, newsletters" />
+  <meta name="keywords" content="Python, Django, bulletin board, MMORPG, portfolio" />
+  <meta name="author" content="Rostislav" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>GuildPost | SkillFlux</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css?v=795583a">
+</head>
+<body class="theme-light">
+
+  <!-- Header -->
+  <header class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">SkillFlux | Python Developer</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#contacts">Contact</a></li>
+          <li class="nav-item">
+            <button id="theme-toggle" class="btn btn-outline-secondary" title="Toggle theme">
+              <span class="theme-icon">☀️</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">GuildPost — MMORPG Bulletin Board</h2>
+
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="card grok-card">
+            <div class="card-body">
+              <h3 class="card-title mb-4">Overview</h3>
+              <p><strong>Problem:</strong> Server communities in MMORPGs are fragmented across chats and forums — it’s hard to find groups and coordinate.</p>
+              <p><strong>Solution:</strong> <em>GuildPost</em> — a Django-based bulletin board with categories (Tanks, Healers, DPS, etc.), threaded replies, email notifications, and newsletters.</p>
+              <p><strong>Technologies:</strong> Python, Django 4.2, Django ORM, django-tinymce, DRF (optional), Bootstrap.</p>
+              <p><strong>Result:</strong> Centralized hub for announcements and coordination; faster team formation; higher community engagement.</p>
+
+              <h5 class="mt-3">Key Features</h5>
+              <ul>
+                <li>Email-based registration with one-time code and password recovery.</li>
+                <li>WYSIWYG editor for posts (titles, rich text, images, video links).</li>
+                <li>Predefined categories (Tanks, Healers, DPS, Traders, Guildmasters, etc.).</li>
+                <li>Replies with private moderation: accept/delete; email notifications.</li>
+                <li>Newsletters: admin HTML campaigns; profile subscriptions.</li>
+                <li>Light/Dark themes; timezone display for server and user.</li>
+                <li>Security: CSRF/XSS protection, safe forms, ORM queries.</li>
+              </ul>
+
+              <div class="row g-4 my-2">
+                <div class="col-md-6">
+                  <figure class="text-center">
+                    <img id="home-img" class="img-fluid rounded mb-2" src="../assets/img/guildpost/home.png" alt="GuildPost home">
+                    <figcaption class="small">Начальная страница</figcaption>
+                  </figure>
+                </div>
+                <div class="col-md-6">
+                  <figure class="text-center">
+                    <img id="create-img" class="img-fluid rounded mb-2" src="../assets/img/guildpost/create.png" alt="Create announcement">
+                    <figcaption class="small">Как создать новость</figcaption>
+                  </figure>
+                </div>
+                <div class="col-md-6">
+                  <figure class="text-center">
+                    <img id="detail-img" class="img-fluid rounded mb-2" src="../assets/img/guildpost/detail.png" alt="Post details and replies">
+                    <figcaption class="small">Подробное содержание новости</figcaption>
+                  </figure>
+                </div>
+                <div class="col-md-6">
+                  <figure class="text-center">
+                    <img id="dashboard-img" class="img-fluid rounded mb-2" src="../assets/img/guildpost/dashboard.png" alt="Private responses dashboard">
+                    <figcaption class="small">Комментарии к новости</figcaption>
+                  </figure>
+                </div>
+              </div>
+
+              <div class="d-flex gap-2 my-3">
+                <a href="https://github.com/Rostislav62/GuildPost-MMORPG-Bulletin-Board" class="btn btn-outline-primary" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://mega.nz/file/VdcAXZZY#dCDnzKWtvXvUZZO1H43dqFmF1YxnWimlIKSraxK4yPs" class="btn btn-outline-primary" target="_blank" rel="noopener">Download from MEGA</a>
+              </div>
+
+              <h5 class="mt-4">Run Locally</h5>
+              <ol>
+                <li>Download and extract the archive from MEGA.</li>
+                <li>Create a virtual environment and install requirements (Windows/Linux) — see <code>README.md</code> in the repo.</li>
+                <li>Create <code>.env</code> (use <code>.env_example</code>), run migrations, create superuser.</li>
+                <li>Start: <code>python manage.py runserver</code> → open <code>http://127.0.0.1:8000</code>.</li>
+              </ol>
+
+              <h5 class="mt-4">Demo Video</h5>
+              <div class="ratio ratio-16x9">
+                <video id="demo-video" controls class="w-100">
+                  <!-- dark theme by default; will switch in JS -->
+                  <source src="../assets/videos/guildpost.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-3 text-white text-center">
+    <div class="container">
+      <p>© 2025 Rostislav. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
+    const themeIcon = toggleButton.querySelector('.theme-icon');
+
+    // map: elementId -> [darkSrc, lightSrc]
+    const media = {
+      'home-img': ['../assets/img/guildpost/home.png', '../assets/img/guildpost/home_w.png'],
+      'create-img': ['../assets/img/guildpost/create.png', '../assets/img/guildpost/create_w.png'],
+      'detail-img': ['../assets/img/guildpost/detail.png', '../assets/img/guildpost/detail_w.png'],
+      'dashboard-img': ['../assets/img/guildpost/dashboard.png', '../assets/img/guildpost/dashboard_w.png'],
+      'demo-video': ['../assets/videos/guildpost.mp4', '../assets/videos/guildpos_w.mp4'] // dark, light
+    };
+
+    function updateMedia(theme) {
+      for (const [elementId, [darkSrc, lightSrc]] of Object.entries(media)) {
+        const element = document.getElementById(elementId);
+        if (!element) continue;
+
+        if (element.tagName === 'VIDEO') {
+          const source = element.querySelector('source');
+          source.src = theme === 'theme-light' ? lightSrc : darkSrc;
+          element.load();
+        } else {
+          element.src = theme === 'theme-light' ? lightSrc : darkSrc;
+        }
+      }
+    }
+
+    const savedTheme = localStorage.getItem('theme') || 'theme-light';
+    body.classList.add(savedTheme);
+    themeIcon.textContent = savedTheme === 'theme-light' ? '☀️' : '🌙';
+    updateMedia(savedTheme);
+
+    toggleButton.addEventListener('click', () => {
+      if (body.classList.contains('theme-light')) {
+        body.classList.replace('theme-light', 'theme-dark');
+        themeIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'theme-dark');
+        updateMedia('theme-dark');
+      } else {
+        body.classList.replace('theme-dark', 'theme-light');
+        themeIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'theme-light');
+        updateMedia('theme-light');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AlpPass – Frontend demo page for Mountain Pass Application" />
+  <meta name="keywords" content="AlpPass, Mountain Pass Application, frontend, demo" />
+  <meta name="author" content="Rostislav" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>AlpPass | SkillFlux</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=795583a" />
+</head>
+<body class="theme-light">
+  <!-- Header -->
+  <header class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">SkillFlux | Python Developer</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#contacts">Contact</a></li>
+          <li class="nav-item">
+            <button id="theme-toggle" class="btn btn-outline-secondary" title="Toggle theme">
+              <span class="theme-icon">☀️</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <section id="alppass" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">AlpPass (Frontend)</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card grok-card">
+            <div class="card-body">
+              <h3 class="card-title mb-4">What is AlpPass?</h3>
+              <p>AlpPass is the client-side UI for the Mountain Pass Application. This demo page showcases the main user flows of the frontend (English only) and includes screenshots and a short demo video.</p>
+
+              <h5 class="mt-4">Key Features (Frontend)</h5>
+              <ul>
+                <li>Clean UI for viewing and managing mountain passes</li>
+                <li>Create and edit pass entries using forms</li>
+                <li>Works with the backend REST API (JWT-protected)</li>
+                <li>Two visual themes: light and dark (toggle on this page)</li>
+              </ul>
+
+              <h5 class="mt-4">Typical User Flows</h5>
+              <ol>
+                <li>Open Home and navigate to passes list.</li>
+                <img id="home-img" src="../assets/img/alppass/home.png" alt="Home screen" class="img-fluid mb-3" />
+                <li>Browse all passes.</li>
+                <img id="allpass-img" src="../assets/img/alppass/allpass.png" alt="All passes screen" class="img-fluid mb-3" />
+                <li>Create a new pass.</li>
+                <img id="newpass-img" src="../assets/img/alppass/newpass.png" alt="Create new pass" class="img-fluid mb-3" />
+                <li>Edit an existing pass.</li>
+                <img id="editpass-img" src="../assets/img/alppass/editpass.png" alt="Edit pass" class="img-fluid mb-3" />
+              </ol>
+
+              <h5 class="mt-4">Web Interface (routes)</h5>
+              <ul>
+                <li><strong>Home:</strong> <a href="http://localhost:5173/" target="_blank">/</a></li>
+                <li><strong>All passes:</strong> <a href="http://localhost:5173/passes" target="_blank">/passes</a></li>
+                <li><strong>Create new pass:</strong> <a href="http://localhost:5173/passes/new" target="_blank">/passes/new</a></li>
+              </ul>
+
+              <h5 class="mt-4">Demo Video</h5>
+              <div class="ratio ratio-16x9">
+                <video id="demo-video" controls>
+                  <source src="../assets/videos/alppass.mp4" type="video/mp4" />
+                </video>
+              </div>
+
+              <p class="mt-3 small text-muted">Note: This page is a static portfolio demo and does not modify the real application.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-3 text-white text-center">
+    <div class="container">
+      <p>© 2025 Rostislav. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', handleThemeToggle);
+    const body = document.body;
+    const themeIcon = document.querySelector('#theme-toggle .theme-icon');
+    const media = {
+      'home-img': ['../assets/img/alppass/home.png', '../assets/img/alppass/home_w.png'],
+      'allpass-img': ['../assets/img/alppass/allpass.png', '../assets/img/alppass/allpass_w.png'],
+      'newpass-img': ['../assets/img/alppass/newpass.png', '../assets/img/alppass/newpass_w.png'],
+      'editpass-img': ['../assets/img/alppass/editpass.png', '../assets/img/alppass/editpass_w.png'],
+      'demo-video': ['../assets/videos/alppass.mp4', '../assets/videos/alppass.mp4']
+    };
+    function updateMedia(theme) {
+      for (const [id, [darkSrc, lightSrc]] of Object.entries(media)) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        if (el.tagName === 'VIDEO') {
+          const source = el.querySelector('source');
+          source.src = theme === 'theme-light' ? lightSrc : darkSrc;
+          el.load();
+        } else {
+          el.src = theme === 'theme-light' ? lightSrc : darkSrc;
+        }
+      }
+    }
+    function applyTheme(theme) {
+      body.classList.remove('theme-light', 'theme-dark');
+      body.classList.add(theme);
+      themeIcon.textContent = theme === 'theme-light' ? '☀️' : '🌙';
+      updateMedia(theme);
+      localStorage.setItem('theme', theme);
+    }
+    function handleThemeToggle() {
+      const next = body.classList.contains('theme-light') ? 'theme-dark' : 'theme-light';
+      applyTheme(next);
+    }
+    applyTheme(localStorage.getItem('theme') || 'theme-light');
+  </script>
+</body>
+</html>
